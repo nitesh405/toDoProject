@@ -16,8 +16,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material/material.module';
 import { UploadFormComponent } from './components/upload-form/upload-form.component';
-
-
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +33,8 @@ import { UploadFormComponent } from './components/upload-form/upload-form.compon
     FlexLayoutModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    AngularFireDatabaseModule
   ],
   providers: [AngularFirestore,BackendService],
   bootstrap: [AppComponent]

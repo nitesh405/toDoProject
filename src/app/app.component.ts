@@ -13,6 +13,6 @@ export class AppComponent {
   }
 
   async addItem() {
-    await this.backend.login({})
+    // await this.backend.login({})
   }
 }

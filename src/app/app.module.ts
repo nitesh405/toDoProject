@@ -14,6 +14,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
+//materials
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +36,13 @@ import { AppRoutingModule } from './app-routing.module';
     AngularFireStorageModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [AngularFirestore,BackendService],
   bootstrap: [AppComponent]

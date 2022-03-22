@@ -12,9 +12,7 @@ export class BackendService {
 
   }
 
-  login(payload : any) {
-    this.afs.collection('items').add(payload).then(res => {
-      console.log(res)
-    })
+  async addItem(payload : any) {
+   return await this.afs.collection('items').add(payload)
   }
 }

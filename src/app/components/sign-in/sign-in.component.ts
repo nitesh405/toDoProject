@@ -25,7 +25,7 @@ export class SignInComponent implements OnInit {
       console.log("you are signed in",res)
       this.router.navigate(['/dashboard'])
     }).catch(err=>{
-      console.log(err)
+      console.log(err.toString())
     })
   }
 }

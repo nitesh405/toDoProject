@@ -14,12 +14,17 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './material/material.module';
+import { UploadFormComponent } from './components/upload-form/upload-form.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    UploadFormComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,8 @@ import { AppRoutingModule } from './app-routing.module';
     AngularFireStorageModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   providers: [AngularFirestore,BackendService],
   bootstrap: [AppComponent]

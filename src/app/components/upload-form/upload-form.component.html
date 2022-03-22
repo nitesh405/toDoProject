@@ -2,6 +2,7 @@
     <input
       type="file" 
       (change)="selectFile($event)"
+      accept="*.png.jpeg"
     />
   </label>
   <button mat-flat-button style="background: linear-gradient(89.81deg, #2F9FFD 0.15%, #3AEDFE 97.25%); color: white;
@@ -10,14 +11,6 @@
     (click) ='upload()'
      >Upload</button>
   <div *ngIf="currentFileUpload" class="progress mt-2">
-    <div
-      class="progress-bar progress-bar-info"
-      role="progressbar"
-      attr.aria-valuenow="{{ percentage }}"
-      aria-valuemin="0"
-      aria-valuemax="100"
-      [ngStyle]="{ width: percentage + '%' }"
-    >
+    <mat-progress-bar mode="determinate" value="percentage"></mat-progress-bar>
       {{ percentage }}%
-    </div>
   </div>

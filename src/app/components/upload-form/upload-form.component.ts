@@ -9,7 +9,7 @@ import { FileUploadService } from 'src/app/services/file-upload.service';
 })
 export class UploadFormComponent implements OnInit {
   currentFileUpload: FileUpload | any;
-  selectedFiles : FileList | undefined;
+  selectedFiles :String | any;
   percentage: number | undefined;
   constructor(
     private uploadService : FileUploadService
@@ -18,14 +18,17 @@ export class UploadFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectFile(val: any) : void{
-    this.selectedFiles = val.target.files;
+  selectFile($val: any) : void{
+    this.selectedFiles = $val.target.files[0];
   }
 
   upload (){
-    const file = this.selectedFiles?.item(0);
-    this.selectedFiles = undefined;
-    console.log(file)
-    this.uploadService.pushFileToStorage(file)
+    this.currentFileUpload = this.selectedFiles;
+    this.uploadService.pushFileToStorage(this.selectedFiles).subscribe(percentage => {
+       this.percentage = Math.round(percentage);
+    },
+    err => {
+      console.log(err)
+    })
   }
 }

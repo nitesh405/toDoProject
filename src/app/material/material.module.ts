@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from "@angular/material/core";
+import { MatProgressBarModule} from "@angular/material/progress-bar";
 const modules =[
     FlexLayoutModule,
     MatInputModule,
@@ -34,7 +35,8 @@ const modules =[
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatProgressBarModule
 ]
 @NgModule({
   declarations: [],

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BackendService } from './services/backend.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-toDoLogin';
+
+  constructor(private backend: BackendService) {
+
+  }
+
+  async addItem() {
+    await this.backend.login({})
+  }
 }

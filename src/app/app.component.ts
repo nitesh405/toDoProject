@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BackendService } from './services/backend.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +7,6 @@ import { BackendService } from './services/backend.service';
 })
 export class AppComponent {
 
-  constructor(private backend: BackendService) {
+  constructor() {}
 
-  }
-
-  async addItem() {
-    await this.backend.login({})
-  }
 }

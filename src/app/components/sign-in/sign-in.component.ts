@@ -8,9 +8,9 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router'
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-
-
-  constructor(private fb: FormBuilder, private fireAuthService: AngularFireAuthService,private router:Router) { }
+  message: string = ''
+  loading:boolean=false;
+  constructor(private fb: FormBuilder, private fireAuthService: AngularFireAuthService, private router: Router) { }
   loginDetails = this.fb.group({
     email: ['', [Validators.email, Validators.required]],
     password: ['', [Validators.required]]
@@ -20,12 +20,16 @@ export class SignInComponent implements OnInit {
   }
 
   submit() {
-    let { email, password } = this.loginDetails.value
-    this.fireAuthService.signIn(email,password).then(res=>{
-      console.log("you are signed in",res)
+    let { email, password } = this.loginDetails.value;
+    this.loading=true;
+    this.fireAuthService.signIn(email, password).then(res => {
+      console.log("you are signed in", res)
+      this.loading=false;
       this.router.navigate(['/dashboard'])
-    }).catch(err=>{
-      console.log(err.toString())
+    }).catch(err => {
+      console.log(err)
+      this.loading=false;
+      this.message = "Email or Password is incorrect"
     })
   }
 }

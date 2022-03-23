@@ -1,7 +1,18 @@
-<p>dashboard works!</p>
 
-<div>
-    <button color="accent" mat-raised-button (click)="submit()">Logout</button>
+<div style="padding: 15px;margin-top: 3em;"  fxLayout="column" fxLayoutAlign="center stretch" fxLayoutGap="3em">
+    <div fxLayout="row" fxLayoutAlign="space-around stretch" style="width: 100%;">
+        <div>
+            <button color="accent" mat-raised-button (click)="navigate('upload')">File Upload</button>
+        </div>
+        <div>
+            <button color="accent" mat-raised-button (click)="navigate('listOfFiles')">List of Files</button>
+        </div>
+        <div>
+            <button color="accent" mat-raised-button (click)="submit()">Logout</button>
+        </div>
+    </div>
+
+    <div div fxLayout="row" fxLayoutAlign="start stretch" style="width: 100%;">
+        <router-outlet ></router-outlet>
+    </div>
 </div>
-
-<app-upload-form></app-upload-form>

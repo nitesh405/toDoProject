@@ -6,19 +6,22 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router'
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
-
+export class DashboardComponent implements OnInit{
+user:any;
   constructor(private fireAuthService:AngularFireAuthService,private router:Router) { }
 
-  submit(){
+  logout(){
     this.fireAuthService.signOut().then(res=>{
       console.log('logged out',res)
+      localStorage.clear();
       this.router.navigate(['/sign-In'])
     })
   }
+  ngOnInit(): void {
+   this.user=localStorage.getItem('email')
+  }
 
   navigate(val: any){
-
     this.router.navigate([`/dashboard/${val}`])
   }
 

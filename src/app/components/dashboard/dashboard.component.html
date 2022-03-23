@@ -1,5 +1,8 @@
 
 <div style="padding: 15px;margin-top: 3em;"  fxLayout="column" fxLayoutAlign="center stretch" fxLayoutGap="3em">
+    <div fxLayoutAlign="end center" fxLayoutGap="0.5em">
+        <mat-icon>account_circle</mat-icon> <span>{{user}}</span>
+    </div>
     <div fxLayout="row" fxLayoutAlign="space-around stretch" style="width: 100%;">
         <div>
             <button color="accent" mat-raised-button (click)="navigate('upload')">File Upload</button>
@@ -8,11 +11,11 @@
             <button color="accent" mat-raised-button (click)="navigate('listOfFiles')">List of Files</button>
         </div>
         <div>
-            <button color="accent" mat-raised-button (click)="submit()">Logout</button>
+            <button color="accent" mat-raised-button (click)="logout()">Logout</button>
         </div>
     </div>
 
-    <div div fxLayout="row" fxLayoutAlign="start stretch" style="width: 100%;">
+    <div div fxLayout="column" fxLayoutAlign="start stretch" style="width: 100%;">
         <router-outlet ></router-outlet>
     </div>
 </div>

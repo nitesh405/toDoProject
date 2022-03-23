@@ -25,7 +25,9 @@ const routes: Routes = [
     },
     {
       path:'sign-Up',
-      component:SignUpComponent
+      component:SignUpComponent,
+      canActivate:[AngularFireAuthGuard],
+      data:{authGuardPipe:redirectLoggedInToDashboard}
   },
   {
     path:"dashboard",

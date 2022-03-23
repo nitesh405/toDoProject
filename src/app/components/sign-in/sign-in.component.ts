@@ -22,8 +22,9 @@ export class SignInComponent implements OnInit {
   submit() {
     let { email, password } = this.loginDetails.value;
     this.loading=true;
-    this.fireAuthService.signIn(email, password).then(res => {
+    this.fireAuthService.signIn(email, password).then((res:any) => {
       console.log("you are signed in", res)
+      localStorage.setItem('email',res['user'].multiFactor.user.email)
       this.loading=false;
       this.router.navigate(['/dashboard'])
     }).catch(err => {

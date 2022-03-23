@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AngularFireAuthService } from 'src/app/services/angular-fire-auth.service';
 @Component({
   selector: 'app-sign-up',
@@ -8,7 +9,7 @@ import { AngularFireAuthService } from 'src/app/services/angular-fire-auth.servi
 })
 export class SignUpComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private fireAuthService: AngularFireAuthService) { }
+  constructor(private fb: FormBuilder, private fireAuthService: AngularFireAuthService,private router: Router) { }
   signUpDetails = this.fb.group({
     email: ['', [Validators.email, Validators.required]],
     password: ['', [Validators.required]]
@@ -20,7 +21,10 @@ export class SignUpComponent implements OnInit {
   submit() {
     let { email, password } = this.signUpDetails.value;
     this.fireAuthService.signUp(email, password).then(res=>{
-      console.log('signup scuccessfully',res)
+      if(res){
+        this.router.navigate(['/dashboard'])
+      }
+    
     }).catch(err=>{
       console.log(err)
     })

@@ -5,7 +5,7 @@
             <span>File Upload</span>
         </div>
     
-        <div fxLayout="row" fxLayoutAlign="start stretch" fxFlex='100'>
+        <div fxLayout="row" fxLayoutAlign="center stretch" fxFlex='100'>
             <div fxLayout="column" fxLayoutAlign="start center" fxFlex='50' fxLayoutGap="5px">
                 <div fxLayoutAlign="center center"
                     style=" cursor: pointer; border: dashed 2px gray; color: gray; height: 200px; width: 50%; border-radius: 5px;"
@@ -33,9 +33,9 @@
                        >Upload</button>
                 </div>
             </div>
-            <div fxLayout="column" fxLayoutAlign="start start" fxFlex='50'>
+            <div fxLayout="column" *ngIf="false" fxLayoutAlign="start start" fxFlex='50'>
                 <span style=" font-size: 20px; color: gray; font-weight: 500; ">List of Files</span>
-                <div fxLayout="row" fxLayoutAlign="start stretch" fxLayoutGap="10px" *ngFor="let item of items">
+                <div fxLayout="row" fxLayoutAlign="center stretch" fxLayoutGap="10px" *ngFor="let item of items">
                     <div>
                         <mat-icon>image</mat-icon>
                     </div>

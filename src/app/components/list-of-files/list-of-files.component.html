@@ -2,7 +2,8 @@
     <div fxLayout="row" fxLayoutAlign="start stretch" *ngFor="let item of usr"style="width: 100%;" >
         <div fxLayout="row" fxLayoutAlign="space-evenly stretch" style="width: 100%;">
             <div fxFlex = "5">
-                <mat-icon style="font-size: 40px; color: gray; width: 40px;height: 40px;">image</mat-icon>
+                <img src="{{item.url}}" height="100" width="100" alt="">
+                <!-- <mat-icon style="font-size: 40px; color: gray; width: 40px;height: 40px;">image</mat-icon> -->
             </div>
             
             <div fxFlex = "40">

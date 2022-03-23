@@ -7,7 +7,7 @@
     
         <div fxLayout="row" fxLayoutAlign="center stretch" fxFlex='100'>
             <div fxLayout="column" fxLayoutAlign="start center" fxFlex='50' fxLayoutGap="5px">
-                <div fxLayoutAlign="center center"
+                <div fxLayoutAlign="center center"  (click)="fileUpload.click()"
                     style=" cursor: pointer; border: dashed 2px gray; color: gray; height: 200px; width: 50%; border-radius: 5px;"
                     fxLayout="column" fxLayoutGap="5px">
     
@@ -16,7 +16,7 @@
                         (change)="selectFile($event)" />
     
                     
-                        <mat-icon  (click)="fileUpload.click()" style="color: green;">cloud_upload</mat-icon>
+                        <mat-icon style="color: green;">cloud_upload</mat-icon>
                
                     <span style="font-size: 20px;">click here</span>
                 </div>
@@ -24,7 +24,10 @@
                 <div >
                     {{selectedFiles?.name}}
                 </div>
-    
+                <div style="width: 50%;">
+                    <mat-progress-bar mode="determinate"  [value]="percentage"></mat-progress-bar>{{percentage}}
+                </div>
+                
                 <div>
                     <button mat-flat-button style="background: linear-gradient(89.81deg, #2F9FFD 0.15%, #3AEDFE 97.25%); color: white;
                     box-shadow: 0px 4px 4px 0px #00000040;"

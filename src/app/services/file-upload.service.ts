@@ -35,14 +35,15 @@ export class FileUploadService {
     const file = {
       url : fileUpload.url,
       name : fileUpload.name,
-      type : fileUpload.type
+      type : fileUpload.type,
+      email:localStorage.getItem('email')
     }
 
     return await this.afs.collection('docs').add(file)
   }
 
- async getFiles(){
-   return await this.afs.collection('docs').get().toPromise();
+ async getFiles(email:string){
+   return await this.afs.collection('docs',ref=> ref.where('email','==',email)).get().toPromise();
   }
 
 }

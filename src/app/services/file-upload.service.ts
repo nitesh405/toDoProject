@@ -17,6 +17,7 @@ export class FileUploadService {
   ) { }
 
   pushFileToStorage( file :any) : Observable <any>{
+    console.log(file)
     const filePath = `${this.basePath}/${file?.name}`;
     const storageRef = this.storage.ref(filePath);
     const uploadTask = this.storage.upload(filePath, file);
@@ -42,6 +43,10 @@ export class FileUploadService {
     }
 
     return await this.afs.collection('docs').add(file)
+  }
+
+ async getFiles(){
+   return await this.afs.collection('docs').get().toPromise();
   }
 
 }

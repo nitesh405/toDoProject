@@ -4,6 +4,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import {AngularFireAuthGuard ,redirectUnauthorizedTo,redirectLoggedInTo} from '@angular/fire/compat/auth-guard'
+import { UploadFormComponent } from './components/upload-form/upload-form.component';
+import { ListOfFilesComponent } from './components/list-of-files/list-of-files.component';
 
 //auth pipes
 
@@ -29,7 +31,17 @@ const routes: Routes = [
     path:"dashboard",
     component:DashboardComponent,
     canActivate:[AngularFireAuthGuard],
-    data:{authGuardPipe:redirectUnauthorizedToLogin}
+    data:{authGuardPipe:redirectUnauthorizedToLogin},
+    children:[
+      {
+        path : 'upload',
+        component : UploadFormComponent
+      },
+      {
+        path : 'listOfFiles',
+        component : ListOfFilesComponent
+      }
+    ]
     }
 ];
 

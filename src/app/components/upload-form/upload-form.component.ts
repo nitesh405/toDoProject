@@ -11,6 +11,7 @@ export class UploadFormComponent implements OnInit {
   currentFileUpload: FileUpload | any;
   selectedFiles :String | any;
   percentage: number | undefined;
+  items = []
   constructor(
     private uploadService : FileUploadService
   ) { }
@@ -19,6 +20,7 @@ export class UploadFormComponent implements OnInit {
   }
 
   selectFile($val: any) : void{
+    console.log($val.target.files)
     this.selectedFiles = $val.target.files[0];
   }
 

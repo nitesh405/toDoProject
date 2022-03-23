@@ -17,13 +17,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material/material.module';
 import { UploadFormComponent } from './components/upload-form/upload-form.component';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { ListOfFilesComponent } from './components/list-of-files/list-of-files.component';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     SignInComponent,
     SignUpComponent,
-    UploadFormComponent
+    UploadFormComponent,
+    ListOfFilesComponent
   ],
   imports: [
     BrowserModule,

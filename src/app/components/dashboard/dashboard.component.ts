@@ -17,4 +17,9 @@ export class DashboardComponent {
     })
   }
 
+  navigate(val: any){
+
+    this.router.navigate([`/dashboard/${val}`])
+  }
+
 }

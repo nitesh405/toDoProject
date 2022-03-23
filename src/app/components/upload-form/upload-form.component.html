@@ -1,0 +1,16 @@
+<label>
+    <input
+      type="file" 
+      (change)="selectFile($event)"
+      accept="*.png.jpeg"
+    />
+  </label>
+  <button mat-flat-button style="background: linear-gradient(89.81deg, #2F9FFD 0.15%, #3AEDFE 97.25%); color: white;
+  box-shadow: 0px 4px 4px 0px #00000040;"
+    [disabled]="!selectedFiles"
+    (click) ='upload()'
+     >Upload</button>
+  <div *ngIf="currentFileUpload" class="progress mt-2">
+    <mat-progress-bar mode="determinate" value="percentage"></mat-progress-bar>
+      {{ percentage }}%
+  </div>

@@ -20,7 +20,6 @@ export class UploadFormComponent implements OnInit {
   }
 
   selectFile($val: any) : void{
-    console.log($val.target.files)
     this.selectedFiles = $val.target.files[0];
   }
 

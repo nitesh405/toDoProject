@@ -17,15 +17,12 @@ export class FileUploadService {
   ) { }
 
   pushFileToStorage( file :any) : Observable <any>{
-    console.log(file)
     const filePath = `${this.basePath}/${file?.name}`;
     const storageRef = this.storage.ref(filePath);
     const uploadTask = this.storage.upload(filePath, file);
     uploadTask.snapshotChanges().pipe(
       finalize (() =>{
         storageRef.getDownloadURL().subscribe(downloadUrl => {
-          console.log(downloadUrl)
-          console.log( file.name)
           file.url = downloadUrl;
           this.saveFileData(file);
         })

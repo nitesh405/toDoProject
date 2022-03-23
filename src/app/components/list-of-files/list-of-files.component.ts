@@ -20,6 +20,7 @@ export class ListOfFilesComponent implements OnInit {
   getFiles(){
     this.uploadService.getFiles().then(res => {
       this.usr=res.docs.map(e=> e.data())
+      console.log(this.usr)
     })
   }
 }

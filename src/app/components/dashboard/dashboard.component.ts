@@ -8,6 +8,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 })
 export class DashboardComponent implements OnInit{
 user:any;
+isAddFile:boolean=false;
+isListFiles:boolean=false;
   constructor(private fireAuthService:AngularFireAuthService,private router:Router) { }
 
   logout(){

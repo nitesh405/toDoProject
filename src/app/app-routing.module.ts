@@ -33,17 +33,7 @@ const routes: Routes = [
     path:"dashboard",
     component:DashboardComponent,
     canActivate:[AngularFireAuthGuard],
-    data:{authGuardPipe:redirectUnauthorizedToLogin},
-    children:[
-      {
-        path : 'upload',
-        component : UploadFormComponent
-      },
-      {
-        path : 'listOfFiles',
-        component : ListOfFilesComponent
-      }
-    ]
+    data:{authGuardPipe:redirectUnauthorizedToLogin}
     }
 ];
 

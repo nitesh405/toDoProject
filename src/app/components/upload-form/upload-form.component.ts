@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FileUpload } from 'src/app/models/file-upload';
 import { FileUploadService } from 'src/app/services/file-upload.service';
 
 @Component({
@@ -8,7 +7,7 @@ import { FileUploadService } from 'src/app/services/file-upload.service';
   styleUrls: ['./upload-form.component.css']
 })
 export class UploadFormComponent implements OnInit {
-  currentFileUpload: FileUpload | any;
+  currentFileUpload:any;
   selectedFiles :String | any;
   percentage: number | undefined;
   items = []

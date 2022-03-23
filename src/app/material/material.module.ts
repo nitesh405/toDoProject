@@ -18,6 +18,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatCardModule} from '@angular/material/card';
+import {MatTooltipModule} from '@angular/material/tooltip';
 const modules =[
     FlexLayoutModule,
     MatInputModule,
@@ -32,6 +33,7 @@ const modules =[
     MatListModule,
     MatToolbarModule,
     MatExpansionModule,
+    MatTooltipModule,
     RouterModule,
     BrowserAnimationsModule,
     MatSnackBarModule,

@@ -8,7 +8,7 @@ import { AngularFireAuthService } from 'src/app/services/angular-fire-auth.servi
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-
+  loading:boolean=false;
   constructor(private fb: FormBuilder, private fireAuthService: AngularFireAuthService,private router: Router) { }
   signUpDetails = this.fb.group({
     email: ['', [Validators.email, Validators.required]],
@@ -20,12 +20,16 @@ export class SignUpComponent implements OnInit {
 
   submit() {
     let { email, password } = this.signUpDetails.value;
-    this.fireAuthService.signUp(email, password).then(res=>{
+    this.loading=true;
+    this.fireAuthService.signUp(email, password).then((res:any)=>{
       if(res){
+        this.loading=false;
+        localStorage.setItem('email',res['user'].multiFactor.user.email)
         this.router.navigate(['/dashboard'])
       }
     
     }).catch(err=>{
+      this.loading=false;
       console.log(err)
     })
   }

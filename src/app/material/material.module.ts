@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatProgressBarModule} from "@angular/material/progress-bar";
+import {MatCardModule} from '@angular/material/card';
 const modules =[
     FlexLayoutModule,
     MatInputModule,
@@ -36,7 +37,8 @@ const modules =[
     MatSnackBarModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatCardModule
 ]
 @NgModule({
   declarations: [],
